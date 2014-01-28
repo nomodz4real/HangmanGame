@@ -124,7 +124,7 @@ int main ()
                 y = true;
                 pOne = pThree;
             }
-            if (x = true && y == true)
+            if (x == true && y == true)
             {
                 pOne = pFour;
                 cout << "You won! \n";
