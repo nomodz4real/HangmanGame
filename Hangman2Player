@@ -64,18 +64,12 @@ while (tracker == 2)
     y = 0;// tacking value for char comparison
     for (int q=0;q<=7;q++)
     {
-        if (guess[0] == entry[y])
+        if (guess[0] == entry[q])
         {
-           if (y == q)
-           {
-               w = q*2;
-           }
-           entryDisplay[w] = '*';
+            w = q*2;
+            entryDisplay[w] = '*';
         }
-        else
-        {
-           ++y;
-        }
+
     }
     cout << "\n" << entryDisplay;
 }
