@@ -5,10 +5,10 @@ using namespace std;
 int main ()
 {
 string entry;
-string entry2;
+string entryDisplay;
 string guess;
-int v,w,x = 1,y,z = 0;
-while (x == 1)
+int v,w,tracker = 1,y,z = 0;
+while (tracker == 1)
 {
     cout << "Player 1, enter your word (8 letters max): ";
     cin >> entry;
@@ -20,48 +20,48 @@ while (x == 1)
     switch (v)
     {
     case 1:
-        entry2 = "_";
+        entryDisplay = "_";
         break;
     case 2:
-        entry2 = "_ _";
+        entryDisplay = "_ _";
         break;
     case 3:
-        entry2 = "_ _ _";
+        entryDisplay = "_ _ _";
         break;
     case 4:
-        entry2 = "_ _ _ _";
+        entryDisplay = "_ _ _ _";
         break;
     case 5:
-        entry2 = "_ _ _ _ _";
+        entryDisplay = "_ _ _ _ _";
         break;
     case 6:
-        entry2 = "_ _ _ _ _ _";
+        entryDisplay = "_ _ _ _ _ _";
         break;
     case 7:
-        entry2 = "_ _ _ _ _ _ _";
+        entryDisplay = "_ _ _ _ _ _ _";
         break;
     case 8:
-        entry2 = "_ _ _ _ _ _ _ _";
+        entryDisplay = "_ _ _ _ _ _ _ _";
         break;
     }
 
     if (guess[0] == 'y')
     {
         cout << "Great then let's play hangman!\n";
-        ++x;
+        ++tracker;
     }
     else
     {
         cout << "Alright let's try again.\n";
     }
 }
-while (x == 2)
+while (tracker == 2)
 {
     cout << "\n\nPlayer 2, enter your guess: ";
     cin >> guess;
     guess[0] = tolower(guess[0]);
-    w = 0;
-    y = 0;
+    w = 0;// number value for altering entryDisplay
+    y = 0;// tacking value for char comparison
     for (int q=0;q<=7;q++)
     {
         if (guess[0] == entry[y])
@@ -70,19 +70,18 @@ while (x == 2)
            {
                w = q*2;
            }
-           entry2[w] = '*';
+           entryDisplay[w] = '*';
         }
         else
         {
            ++y;
         }
     }
-    cout << entry2;
+    cout << "\n" << entryDisplay;
 }
-
-
-
 
   system("pause");
   return 0;
 }
+
+
